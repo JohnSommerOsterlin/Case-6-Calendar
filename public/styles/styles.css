@@ -1,12 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: Poppins;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 4rem;
+  background-color: gray;
+  padding-top: 10px;
 }
 
 main {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+main h2 {
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+main .main-calendar {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 85%;
+}
+
+main .main-calendar .weekday {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+main .main-calendar .weekday .day-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 80%;
+}
+
+main .main-calendar .weekday .event-section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .main-calendar .weekday .event {
+  height: 1.7rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #cccccc;
+  max-width: 80%;
+  border-radius: 10px;
+  padding-left: 8px;
+}
+
+main .main-calendar .weekday .img-div {
+  margin-left: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100%;
+  height: 20px;
+  width: 20px;
+}
+
+main .scroll-bottom {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+main .add-event {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 20px;
+  background-color: gray;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+main .add-event img {
+  width: 40px;
+  height: 40px;
+}
+
+main .overview {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: gray;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+main .overview img {
+  width: 30px;
+  height: 30px;
+}
+
+footer {
+  background-color: #616161;
+  color: white;
+  height: 3rem;
+  padding-top: 10px;
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */
