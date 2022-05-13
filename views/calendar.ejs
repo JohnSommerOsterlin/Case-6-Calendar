@@ -125,6 +125,28 @@
     <%- include('partials/footer.ejs') %>
 
     <script src="../script/script.js"></script>
+
+
+
+
+    <% events.forEach(function(event) { %>
+        <div class="eventContainer">
+        <!-- <p class="eventTitle">
+        <%= event.title %> -->
+        </p>
+        <span></span>
+        <p class="eventDate">
+        <%= event.date %>
+        </p>
+        <span></span>
+        <p class="eventDescription">
+        <%= event.description %>
+        </p>
+        <span></span>
+        <!-- <button class="edit-button" data-id="<%= event.id %>">Edit</button> -->
+        <!-- <button onclick="handleDelete(<%= event.id %>)">Delete</button> -->
+        </div>
+        <% }); %>
 </body>
 
 </html>
