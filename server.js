@@ -19,11 +19,11 @@ app.use(express.json());
 app.get('/calendar', eventsController.getAllEvents);
 app.post('/calendar', eventsController.createEvent);
 
+app.delete('/calendar/:id', eventsController.removeEvent);
+
 
 // app.get('/search', calendarController.searchEvent);
-// app.post('/calendar', calendarController.createEvent);
 // app.put('/calendar/:id', calendarController.updateEvent);
-// app.delete('/calendar/:id', calendarController.removeEvent);
 
 // use route modules
 import routeStart from './routes/start.js';

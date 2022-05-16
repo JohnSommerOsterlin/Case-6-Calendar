@@ -30,38 +30,38 @@ export default {
         res.render("calendar", { 
             events: eventsModel.getEvents() });
     },
-//     removeQuote: (req, res) => {
+    removeEvent: (req, res) => {
+        const id = Number(req.params.id);
+
+        if (id < 0) {
+            // console.log(eventsViews.errorInvalidId);
+            return;
+        }
+
+        const eventToBeRemoved = eventsModel.getEvent(id);
+        const isOK = eventsModel.removeEvent(eventToBeRemoved.id);
+
+        if (!isOK) {
+            // console.log(eventsViews.errorEventNotRemoved);
+            return;
+        }
+
+        // console.log(eventsViews.eventRemoved(eventToBeRemoved));
+
+        res.redirect('/calendar');
+    },
+//     updateEvent: (req, res) => {
 //         const id = Number(req.params.id);
-
-//         if (id < 0) {
-//             console.log(quoteViews.errorInvalidId);
-//             return;
-//         }
-
-//         const quoteToBeRemoved = quoteModel.getQuote(id);
-//         const isOK = quoteModel.removeQuote(quoteToBeRemoved.id);
-
-//         if (!isOK) {
-//             console.log(quoteViews.errorQuoteNotRemoved);
-//             return;
-//         }
-
-//         console.log(quoteViews.quoteRemoved(quoteToBeRemoved));
-
-//         res.redirect('/');
-//     },
-//     updateQuote: (req, res) => {
-//         const id = Number(req.params.id);
-//         const quote = req.body.quote;
-//         const author = req.body.author;
+//         const description = req.body.description;
+//         const author = req.body.date;
         
 //         if (id < 0) {
 //             console.log(quoteViews.errorInvalidId);
 //             return;
 //         }
 
-//         if (!quote || !author) {
-//             console.log("Quote and Author is not defined", quote, author);
+//         if (!description || !date) {
+//             console.log("description and date is not defined", description, date);
 //             return;
 //         }
 
