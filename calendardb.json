@@ -1,2 +1,17 @@
-[{"id":1, "date": "2022-05-01T13:20:00.000Z", "description": "Stoffes födelsedag"},
-    {"id":2, "date": "2022-05-asdasdasd:20:00.000Z", "description": "BÄRKA BÄRKA!"}]
+[{
+    "id": 1,
+    "date": "2022-05-01",
+    "description": "Stoffes födelsedag"
+}, {
+    "id": 2,
+    "date": "2022-05-02",
+    "description": "Möte"
+}, {
+    "id": 3,
+    "description": "Födelsedag",
+    "date": "2022-05-19"
+}, {
+    "id": 4,
+    "description": "Niclas födelsedag",
+    "date": "2022-05-28"
+}]

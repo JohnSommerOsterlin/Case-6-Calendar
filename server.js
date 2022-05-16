@@ -17,6 +17,8 @@ app.use(express.json());
 
 // listen to requests
 app.get('/calendar', eventsController.getAllEvents);
+app.post('/calendar', eventsController.createEvent);
+
 
 // app.get('/search', calendarController.searchEvent);
 // app.post('/calendar', calendarController.createEvent);

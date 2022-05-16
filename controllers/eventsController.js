@@ -4,27 +4,31 @@ import eventsViews from "../views/eventsViews.js";
 import eventsModel from "../models/eventsModel.js";
 
 export default {
-    // printUsage: function() {
-    //     console.log(quoteViews.usage);
-    // },
-    // createEvent: (req, res) => {
-    //     const quote = req.body.quote;
-    //     const author = req.body.author;
 
-    //     console.log(quote, author);
-    //     // Controller Method for creating new quote
-    //     const isOK = eventsModel.addEvent(event, author);
+    createEvent: (req, res) => {
+        console.log(req.body);
+        const description = req.body.description;
+        const date = req.body.date;
 
-    //     // Check if something went wrong
-    //     if (!isOK) {
-    //         res.render("error", { message: "Could not save quote" });
-    //         return;
-    //     }
+        console.log(date, description);
+    //  Controller Method for creating new event
+        const isOK = eventsModel.addEvent(date, description);
 
-        // res.render("quotes", { quotes: quoteModel.getQuotes() });
-    // }
+        // Check if something went wrong
+        if (!isOK) {
+            // res.render("error", { message: "Could not save event" });
+            // return;
+        }
+
+        res.render("calendar", {
+            events: eventsModel.getEvents()
+        });
+
+    },
+
     getAllEvents: (req, res) => {
-        res.render("calendar", { events: eventsModel.getEvents() });
+        res.render("calendar", { 
+            events: eventsModel.getEvents() });
     },
 //     removeQuote: (req, res) => {
 //         const id = Number(req.params.id);

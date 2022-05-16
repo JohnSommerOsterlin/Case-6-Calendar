@@ -6,43 +6,47 @@ const eventsModel = {
     getEvents: function () {
     return JSON.parse(fs.readFileSync(dbPath, "utf-8"));
 },
-//   getQuote: function (id) {
-//     return this.getQuotes().find((quote) => quote.id === id);
-//   },
-//   saveQuotes: function (quotes) {
-//     return fs.writeFileSync(dbPath, JSON.stringify(quotes));
-//   },
-//   addQuote: function (quote, author) {
-//     // Model Method to write new quote into database
-//     const allQuotes = this.getQuotes();
+    getEvent: function (id) {
+    return this.getEvents().find((event) => event.id === id);
+    },
+    saveEvent: function (events) {
+    return fs.writeFileSync(dbPath, JSON.stringify(events));
+    },
+    addEvent: function (date, description) {
+    // Model Method to write new quote into database
+    const allEvents = this.getEvents();
 
 //     // if quotes are not defined we return false
 //     // to signal that something went wrong
-//     if (!allQuotes) {
-//       console.log("allQuotes not defined");
-//       return false;
-//     }
+    if (!allEvents) {
+        console.log("allEvents not defined");
+        return false;
+    }
 
 //     // if quote or author is not defined then exit early
-//     if (!quote || !author) {
+    if (!date || !description) {
 //       console.log("quote or author is not defined");
-//       return false;
-//     }
+        return false;
+    }
 
-//     const lastQuote = allQuotes[allQuotes.length - 1];
-//     const newId = (lastQuote?.id || 0) + 1;
+    const lastEvent = allEvents[allEvents.length - 1];
+    const newId = (lastEvent?.id || 0) + 1;
 
-//     // Create new quote object
-//     const newQuote = { id: newId, quote, author };
+    // Create new event object
+    const newEvent = { 
+        id: newId, 
+        description, 
+        date 
+    };
 
-//     // Update Javascript array with new quote
-//     allQuotes.push(newQuote);
+    // Update Javascript array with new quote
+    allEvents.push(newEvent);
+    
+    // Write new state to DB
+    this.saveEvent(allEvents);
 
-//     // Write new state to DB
-//     this.saveQuotes(allQuotes);
-
-//     return true;
-//   },
+    return true;
+},
 //   removeQuote: function (id) {
 //     // Get all quotes
 //     const allQuotes = this.getQuotes();
@@ -98,7 +102,7 @@ const eventsModel = {
 
 //     // Return matches
 //     return matches;
-//   },
-};
+    };
+// };
 
 export default eventsModel;
