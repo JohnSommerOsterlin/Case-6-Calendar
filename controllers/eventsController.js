@@ -7,12 +7,12 @@ export default {
 
     createEvent: (req, res) => {
         console.log(req.body);
-        const description = req.body.description;
+        const title = req.body.title;
         const date = req.body.date;
 
-        console.log(date, description);
-    //  Controller Method for creating new event
-        const isOK = eventsModel.addEvent(date, description);
+        console.log(date, title);
+        //  Controller Method for creating new event
+        const isOK = eventsModel.addEvent(date, title);
 
         // Check if something went wrong
         if (!isOK) {
@@ -27,8 +27,9 @@ export default {
     },
 
     getAllEvents: (req, res) => {
-        res.render("calendar", { 
-            events: eventsModel.getEvents() });
+        res.render("calendar", {
+            events: eventsModel.getEvents()
+        });
     },
     removeEvent: (req, res) => {
         const id = Number(req.params.id);
@@ -50,62 +51,62 @@ export default {
 
         res.redirect('/calendar');
     },
-//     updateEvent: (req, res) => {
-//         const id = Number(req.params.id);
-//         const description = req.body.description;
-//         const author = req.body.date;
-        
-//         if (id < 0) {
-//             console.log(quoteViews.errorInvalidId);
-//             return;
-//         }
+    updateEvent: (req, res) => {
+        const id = Number(req.params.id);
+        const title = req.body.title;
+        const date = req.body.date;
 
-//         if (!description || !date) {
-//             console.log("description and date is not defined", description, date);
-//             return;
-//         }
+        if (id < 0) {
+            console.log(eventsViews.errorInvalidId);
+            return;
+        }
 
-//         const isOK = quoteModel.updateQuote(id, quote, author);
+        if (!title || !date) {
+            console.log("title and date is not defined", title, date);
+            return;
+        }
 
-//         if (!isOK) {
-//             console.log("Quote not Updated");
-//             return;
-//         }
+        const isOK = eventsModel.updateEvent(id, title, date);
 
-//         console.log("Quote Updated");
+        if (!isOK) {
+            console.log("Event not Updated");
+            return;
+        }
 
-//         res.redirect('/');
-//     },
-//     searchQuote: (req, res) => {
-//         const searchStr = req.query.searchStr;
-        
-//         const matches = quoteModel.searchQuotes(searchStr);
+        console.log("Event Updated");
 
-//         // TODO show different view if no matches found
-//         res.render("quotes", { quotes: matches });
-//     }
-//     // searchQuote: function() {
-//     //      // Start a read line interface to ask user for parameters
-//     //      const rl = readline.createInterface({
-//     //         input: process.stdin,
-//     //         output: process.stdout
-//     //     });
+        res.redirect('/calendar');
+    },
+    //     searchQuote: (req, res) => {
+    //         const searchStr = req.query.searchStr;
 
-//     //     rl.question(quoteViews.questionSearchString, (searchString) => {
-//     //         const matches = quoteModel.searchQuotes(searchString);
+    //         const matches = quoteModel.searchQuotes(searchStr);
 
-//     //         if (matches.length <= 0) {
-//     //             console.log(quoteViews.noSearchMatches(searchString));
-//     //             rl.close();
-//     //             return;
-//     //         }
+    //         // TODO show different view if no matches found
+    //         res.render("quotes", { quotes: matches });
+    //     }
+    //     // searchQuote: function() {
+    //     //      // Start a read line interface to ask user for parameters
+    //     //      const rl = readline.createInterface({
+    //     //         input: process.stdin,
+    //     //         output: process.stdout
+    //     //     });
 
-//     //         const view = quoteViews.allQuotes(matches);
+    //     //     rl.question(quoteViews.questionSearchString, (searchString) => {
+    //     //         const matches = quoteModel.searchQuotes(searchString);
 
-//     //         console.log(quoteViews.matchesFound(searchString));
-//     //         console.log(view);
-//     //         rl.close();
-//     //     })
-        
-//     // }
+    //     //         if (matches.length <= 0) {
+    //     //             console.log(quoteViews.noSearchMatches(searchString));
+    //     //             rl.close();
+    //     //             return;
+    //     //         }
+
+    //     //         const view = quoteViews.allQuotes(matches);
+
+    //     //         console.log(quoteViews.matchesFound(searchString));
+    //     //         console.log(view);
+    //     //         rl.close();
+    //     //     })
+
+    //     // }
 }
