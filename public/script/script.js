@@ -2,6 +2,54 @@ function addEventBtn() {
     console.log("click");
 }
 
+
+
+// let dateElement = document.querySelector(".main-calendar");
+// dateElement.setAttribute("data-date", new Date());
+// let nextWeek = document.querySelector(".scroll-right").addEventListener("click", nextWeekBtn)
+// let prevWeek = document.querySelector(".scroll-left").addEventListener("click", prevWeekBtn)
+
+// function nextWeekBtn() {
+//     console.log("click-right");
+// };
+
+// function prevWeekBtn () {
+//     console.log("click-left");
+// }
+
+const changeWeek = document.querySelector(".change-week-container");
+// console.log(changeWeek);
+
+changeWeek.addEventListener("click", function (event) {
+    let target = event.target;
+    // console.log(target);
+
+    if (target.id === "scroll-left") {
+        console.log("clicked left");
+    } else if (target.id === "scroll-right") {
+        console.log("clicked right");
+    }
+});
+
+
+
+
+
+let today = new Date();
+// --> Date function <-- //
+function firstDayOfWeek(date) {
+    for (let i = 0; i < 7; i++) {
+        let firstDay = today.getDate() - (today.getDay()) + i
+        let date = new Date(today.setDate(firstDay + 1)).toLocaleDateString();
+        console.log(date);
+        document.getElementById("date" + i).textContent = date;
+    }
+};
+firstDayOfWeek()
+
+
+
+
 async function handleDelete(id) {
     console.log("HandleDelete was called with id", id);
     const response = await fetch(`/calendar/${id}`, {

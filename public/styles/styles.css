@@ -37,13 +37,6 @@ main {
   height: 100%;
 }
 
-main h2 {
-  font-weight: 600;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-}
-
 main .main-calendar {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -103,9 +96,39 @@ main .main-calendar .weekday .img-div {
   width: 20px;
 }
 
-main .scroll-bottom {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+main .change-week-container {
+  width: 200px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+main .change-week-container h2 {
+  padding: 0 20px 0 20px;
+  font-weight: 600;
+}
+
+main .change-week-container img {
+  width: 30px;
+  height: 30px;
+}
+
+main .change-week-container #scroll-left {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+main .change-week-container #scroll-right {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 main .add-event {
@@ -153,6 +176,10 @@ main .overview {
 main .overview img {
   width: 30px;
   height: 30px;
+}
+
+main .event-window {
+  background-color: blue;
 }
 
 footer {

@@ -28,12 +28,12 @@ main {
     height: 100%;
     // background-color: deeppink;
 
-    h2 {
-        font-weight: 600;
-        text-align: center;
-        margin-top: 1rem;
-        margin-bottom: 3rem;
-    }
+    // h2 {
+    //     font-weight: 600;
+    //     text-align: center;
+    //     margin-top: 1rem;
+    //     margin-bottom: 3rem;
+    // }
 
     .main-calendar {
         margin-top: 2rem;
@@ -78,12 +78,33 @@ main {
             }
         }
     }
+    .change-week-container {
+        width: 200px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+
+        h2 {
+            padding: 0 20px 0 20px;
+            font-weight: 600;
+        }
 
 
-    .scroll-bottom {
-        transform: rotate(180deg);
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #scroll-left {
+            transform: rotate(-90deg);
+        }
+        
+        #scroll-right {
+            transform: rotate(90deg);
+        }
     }
-    
 
     .add-event {
         display: flex;

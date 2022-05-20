@@ -12,15 +12,13 @@
     <%- include('partials/header.ejs') %>
 
     <main>
-        <h2>Week 1</h2>
-        <div class="scroll-top">
-            <img src="../images/icons/scroll.svg" alt="">
-        </div>
-        <div class="main-calendar">
+
+
+        <div class="main-calendar" data-date="">
             <div class="weekday">
                 <div class="day-date monday">
                     <h4>Monday</h4>
-                    <p>date</p>
+                    <p id="date0">date</p>
                 </div>
                 <div class="event-section">
                     <div class="event">event</div>
@@ -31,9 +29,9 @@
                 </div>
             </div>
             <div class="weekday">
-                <div class="day-date monday">
+                <div class="day-date tuesday">
                     <h4>Tuesday</h4>
-                    <p>date</p>
+                    <p id="date1">date</p>
                 </div>
                 <div class="event-section">
                     <div class="event">event</div>
@@ -46,7 +44,7 @@
             <div class="weekday">
                 <div class="day-date monday">
                     <h4>Wednesday</h4>
-                    <p>date</p>
+                    <p id="date2">date</p>
                 </div>
                 <div class="event-section">
                     <div class="event">event</div>
@@ -59,7 +57,7 @@
             <div class="weekday">
                 <div class="day-date monday">
                     <h4>Thursday</h4>
-                    <p>date</p>
+                    <p id="date3">date</p>
                 </div>
                 <div class="event-section">
                     <div class="event">event</div>
@@ -72,7 +70,7 @@
             <div class="weekday">
                 <div class="day-date monday">
                     <h4>Friday</h4>
-                    <p>date</p>
+                    <p id="date4">date</p>
                 </div>
                 <div class="event-section">
                     <div class="event">event</div>
@@ -85,7 +83,7 @@
             <div class="weekday">
                 <div class="day-date monday">
                     <h4>Saturday</h4>
-                    <p>date</p>
+                    <p id="date5">date</p>
                 </div>
                 <div class="event-section">
                     <div class="event">event</div>
@@ -98,7 +96,7 @@
             <div class="weekday">
                 <div class="day-date monday">
                     <h4>Sunday</h4>
-                    <p>date</p>
+                    <p id="date6">date</p>
                 </div>
                 <div class="event-section">
                     <div class="event">event</div>
@@ -109,8 +107,16 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-bottom">
-            <img src="../images/icons/scroll.svg" alt="">
+        <div class="change-week-container">
+
+            <div class="scroll-left-container">
+                <img src="../images/icons/scroll.svg" alt="" id="scroll-left">
+            </div>
+            <h2>Week 1</h2>
+            <div class="scroll-right-container">
+                <img src="../images/icons/scroll.svg" alt="" id="scroll-right">
+            </div>
+
         </div>
         <div class="event-window">EVENT WINDOW</div>
         <button class="add-event" onclick="addEventBtn()">
@@ -136,19 +142,19 @@
     <% events.forEach(function(event) { %>
     <div class="eventContainer">
         <!-- <p class="eventTitle"> -->
-    
-    <!-- </p> -->
-    <span></span>
-    <p class="eventDate">
-        <%= event.date %>
-    </p>
-    <span></span>
-    <p class="eventTitle">
-        <%= event.title %>
-    </p>
-    <span></span>
-    <button class="edit-button" data-id="<%= event.id %>">Edit</button>
-    <button onclick="handleDelete(<%= event.id %>)">Delete</button>
+
+        <!-- </p> -->
+        <span></span>
+        <p class="eventDate">
+            <%= event.date %>
+        </p>
+        <span></span>
+        <p class="eventTitle">
+            <%= event.title %>
+        </p>
+        <span></span>
+        <button class="edit-button" data-id="<%= event.id %>">Edit</button>
+        <button onclick="handleDelete(<%= event.id %>)">Delete</button>
     </div>
     <% }); %>
 
