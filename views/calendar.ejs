@@ -14,7 +14,7 @@
     <main>
 
 
-        <div class="main-calendar" data-date="">
+        <div class="main-calendar" data-date=""> 
             <div class="weekday">
                 <div class="day-date monday">
                     <h4>Monday</h4>
@@ -112,19 +112,46 @@
             <div class="scroll-left-container">
                 <img src="../images/icons/scroll.svg" alt="" id="scroll-left">
             </div>
-            <h2>Week 1</h2>
+            <h3 id="week-number"></h3>
             <div class="scroll-right-container">
                 <img src="../images/icons/scroll.svg" alt="" id="scroll-right">
             </div>
-
         </div>
-        <div class="event-window">EVENT WINDOW</div>
-        <button class="add-event" onclick="addEventBtn()">
+
+        <!-- <button class="add-event" onclick="addEventBtn()">
             <img src="../images/icons/add_event.svg" alt="">
         </button>
         <button class="overview">
             <img src="../images/icons/overview.svg" alt="">
-        </button>
+        </button> -->
+
+        <form action="/calendar" method="POST">
+            <input type="text" name="title" id="title">
+            <input type="date" name="date" id="date">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <% events.forEach(function(event) { %>
+        <div class="eventContainer">
+            <!-- <p class="eventTitle"> -->
+
+            <!-- </p> -->
+            <span></span>
+            <p class="eventDate">
+                <%= event.date %>
+            </p>
+            <span></span>
+            <p class="eventTitle">
+                <%= event.title %>
+            </p>
+            <span></span>
+            <button class="edit-button" data-id="<%= event.id %>">Edit</button>
+            <button onclick="handleDelete(<%= event.id %>)">Delete</button>
+        </div>
+        <% }); %>
+
+        <script src="../script/script.js"></script>
 
     </main>
 
@@ -132,33 +159,7 @@
 
 
 
-    <form action="/calendar" method="POST">
-        <input type="text" name="title" id="title">
-        <input type="date" name="date" id="date">
 
-        <button type="submit">Submit</button>
-    </form>
-
-    <% events.forEach(function(event) { %>
-    <div class="eventContainer">
-        <!-- <p class="eventTitle"> -->
-
-        <!-- </p> -->
-        <span></span>
-        <p class="eventDate">
-            <%= event.date %>
-        </p>
-        <span></span>
-        <p class="eventTitle">
-            <%= event.title %>
-        </p>
-        <span></span>
-        <button class="edit-button" data-id="<%= event.id %>">Edit</button>
-        <button onclick="handleDelete(<%= event.id %>)">Delete</button>
-    </div>
-    <% }); %>
-
-    <script src="../script/script.js"></script>
 </body>
 
 </html>

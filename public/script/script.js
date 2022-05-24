@@ -1,23 +1,12 @@
-function addEventBtn() {
-    console.log("click");
-}
+const changeWeek = document.querySelector(".change-week-container");
+let weekNumber = document.getElementById("week-number");
 
 
-
-// let dateElement = document.querySelector(".main-calendar");
-// dateElement.setAttribute("data-date", new Date());
-// let nextWeek = document.querySelector(".scroll-right").addEventListener("click", nextWeekBtn)
-// let prevWeek = document.querySelector(".scroll-left").addEventListener("click", prevWeekBtn)
-
-// function nextWeekBtn() {
-//     console.log("click-right");
-// };
-
-// function prevWeekBtn () {
-//     console.log("click-left");
+// function addEventBtn() {
+//     console.log("click");
 // }
 
-const changeWeek = document.querySelector(".change-week-container");
+
 // console.log(changeWeek);
 
 changeWeek.addEventListener("click", function (event) {
@@ -25,13 +14,29 @@ changeWeek.addEventListener("click", function (event) {
     // console.log(target);
 
     if (target.id === "scroll-left") {
+
         console.log("clicked left");
     } else if (target.id === "scroll-right") {
+        let thisWeek = Number(weekNumber.innerText)
+        let nextWeek = Math.min(thisWeek + 1, 52)
+        firstDayOfWeek()
         console.log("clicked right");
     }
+    getWeekNumber()
 });
 
-
+function getWeekNumber() {
+    let currentDate = new Date();
+    let oneJan = new Date(currentDate.getFullYear(), 0, 1);
+    let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
+    let result = Math.ceil((currentDate.getDay() + numberOfDays) / 7);
+    console.log(result);
+    weekNumber.innerHTML = 
+    `
+        <h3>Week ${result}</h3>
+    `
+}
+getWeekNumber()
 
 
 

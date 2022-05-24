@@ -111,8 +111,8 @@ main .change-week-container {
   padding: 0;
 }
 
-main .change-week-container h2 {
-  padding: 0 20px 0 20px;
+main .change-week-container h3 {
+  padding: 0 10px 0 10px;
   font-weight: 600;
 }
 
