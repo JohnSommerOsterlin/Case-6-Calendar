@@ -111,7 +111,7 @@ main .change-week-container {
   padding: 0;
 }
 
-main .change-week-container h3 {
+main .change-week-container #week-number {
   padding: 0 10px 0 10px;
   font-weight: 600;
 }
