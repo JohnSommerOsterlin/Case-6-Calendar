@@ -43,50 +43,26 @@ main .main-calendar {
   width: 85%;
 }
 
-main .main-calendar .weekday {
+main .main-calendar .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main .main-calendar .weekday .day-date {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 80%;
-}
-
-main .main-calendar .weekday .event-section {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-main .main-calendar .weekday .event {
-  height: 1.7rem;
+main .main-calendar .container .date {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #cccccc;
-  max-width: 80%;
-  border-radius: 10px;
-  padding-left: 8px;
+  width: 100%;
 }
 
-main .main-calendar .weekday .img-div {
+main .main-calendar .img-div {
   margin-left: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,7 +72,7 @@ main .main-calendar .weekday .img-div {
   width: 20px;
 }
 
-main .change-week-container {
+.change-week-container {
   width: 200px;
   height: 100px;
   display: -webkit-box;
@@ -111,75 +87,29 @@ main .change-week-container {
   padding: 0;
 }
 
-main .change-week-container #week-number {
-  padding: 0 10px 0 10px;
+.change-week-container #week-number {
+  padding: 0 20px 0 20px;
   font-weight: 600;
 }
 
-main .change-week-container img {
+.change-week-container img {
   width: 30px;
   height: 30px;
 }
 
-main .change-week-container #scroll-left {
+.change-week-container #scroll-left {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
 
-main .change-week-container #scroll-right {
+.change-week-container #scroll-right {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-main .add-event {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  bottom: 20px;
-  background-color: gray;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-}
-
-main .add-event img {
-  width: 40px;
-  height: 40px;
-}
-
-main .overview {
-  position: absolute;
-  bottom: 20px;
-  right: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: gray;
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-}
-
-main .overview img {
+img {
   width: 30px;
   height: 30px;
-}
-
-main .event-window {
-  background-color: blue;
 }
 
 footer {

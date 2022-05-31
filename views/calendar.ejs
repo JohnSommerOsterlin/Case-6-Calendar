@@ -14,129 +14,15 @@
     <main>
 
 
-        <!-- <div class="main-calendar" data-date=""> 
-            <div class="weekday">
-                <div class="day-date monday">
-                    <h4>Monday</h4>
-                    <p id="date0">date</p>
-                </div>
-                <div class="event-section">
-                    <div class="event">event</div>
-                    <div class="img-div">
-                        <img src="../images/icons/edit.svg" alt="">
-                        <img src="../images/icons/close.svg" alt="">
+        <div class="main-calendar" data-date="">
+            <div class="container">
+                <div class="weekdays">
+                    <div id="weekday" class="weekday">
                     </div>
                 </div>
-            </div>
-            <div class="weekday">
-                <div class="day-date tuesday">
-                    <h4>Tuesday</h4>
-                    <p id="date1">date</p>
-                </div>
-                <div class="event-section">
-                    <div class="event">event</div>
-                    <div class="img-div">
-                        <img src="../images/icons/edit.svg" alt="">
-                        <img src="../images/icons/close.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="weekday">
-                <div class="day-date monday">
-                    <h4>Wednesday</h4>
-                    <p id="date2">date</p>
-                </div>
-                <div class="event-section">
-                    <div class="event">event</div>
-                    <div class="img-div">
-                        <img src="../images/icons/edit.svg" alt="">
-                        <img src="../images/icons/close.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="weekday">
-                <div class="day-date monday">
-                    <h4>Thursday</h4>
-                    <p id="date3">date</p>
-                </div>
-                <div class="event-section">
-                    <div class="event">event</div>
-                    <div class="img-div">
-                        <img src="../images/icons/edit.svg" alt="">
-                        <img src="../images/icons/close.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="weekday">
-                <div class="day-date monday">
-                    <h4>Friday</h4>
-                    <p id="date4">date</p>
-                </div>
-                <div class="event-section">
-                    <div class="event">event</div>
-                    <div class="img-div">
-                        <img src="../images/icons/edit.svg" alt="">
-                        <img src="../images/icons/close.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="weekday">
-                <div class="day-date monday">
-                    <h4>Saturday</h4>
-                    <p id="date5">date</p>
-                </div>
-                <div class="event-section">
-                    <div class="event">event</div>
-                    <div class="img-div">
-                        <img src="../images/icons/edit.svg" alt="">
-                        <img src="../images/icons/close.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="weekday">
-                <div class="day-date monday">
-                    <h4>Sunday</h4>
-                    <p id="date6">date</p>
-                </div>
-                <div class="event-section">
-                    <div class="event">event</div>
-                    <div class="img-div">
-                        <img src="../images/icons/edit.svg" alt="">
-                        <img src="../images/icons/close.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="container">
-            <div>
-                <p>Monday</p>
-                <p>Tuesday</p>
-                <p>Wednesday</p>
-                <p>Thursday</p>
-                <p>Friday</p>
-                <p>Saturday</p>
-                <p>Sunday</p>
-            </div>
-            <div class="week-dates"></div>
-        </div>
-        <div class="change-week-container">
-            <div class="scroll-left-container">
-                <img src="../images/icons/scroll.svg" alt="" id="scroll-left">
-            </div>
-            <h4 id="week-number"></h4>
-            <div class="scroll-right-container">
-                <img src="../images/icons/scroll.svg" alt="" id="scroll-right">
             </div>
         </div>
-
-        <!-- <button class="add-event" onclick="addEventBtn()">
-            <img src="../images/icons/add_event.svg" alt="">
-        </button>
-        <button class="overview">
-            <img src="../images/icons/overview.svg" alt="">
-        </button> -->
-
+        
         <form action="/calendar" method="POST">
             <input type="text" name="title" id="title">
             <input type="date" name="date" id="date">
@@ -145,14 +31,11 @@
         </form>
 
         <% events.forEach(function(event) { %>
-        <div class="eventContainer">
-            <!-- <p class="eventTitle"> -->
-
-            <!-- </p> -->
-            <span></span>
+        <div class="eventContainer" id="<%= event.date %>" style="display: none;">
+            
             <p class="eventDate">
                 <%= event.date %>
-            </p>
+            </p> 
             <span></span>
             <p class="eventTitle">
                 <%= event.title %>
@@ -162,6 +45,30 @@
             <button onclick="handleDelete(<%= event.id %>)">Delete</button>
         </div>
         <% }); %>
+
+
+
+
+        <div class="change-week-container">
+            <div class="scroll-left-container">
+                <img src="../images/icons/scroll.svg" alt="" id="scroll-left">
+            </div>
+            <h2 id="week-number"></h2>
+            <div class="scroll-right-container">
+                <img src="../images/icons/scroll.svg" alt="" id="scroll-right">
+            </div>
+        </div>
+
+
+
+        <!-- <button class="add-event" onclick="addEventBtn()">
+            <img src="../images/icons/add_event.svg" alt="">
+        </button>
+        <button class="overview">
+            <img src="../images/icons/overview.svg" alt="">
+        </button> -->
+
+        
 
         <script src="../script/script.js"></script>
 

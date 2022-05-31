@@ -31,6 +31,13 @@ export default {
             events: eventsModel.getEvents()
         });
     },
+    getAllEventsApi: (req, res) => {
+        let result = {
+            events: eventsModel.getEvents()
+        }
+        res.json(result)
+    },
+
     removeEvent: (req, res) => {
         const id = Number(req.params.id);
 
@@ -77,36 +84,4 @@ export default {
 
         res.redirect('/calendar');
     },
-    //     searchQuote: (req, res) => {
-    //         const searchStr = req.query.searchStr;
-
-    //         const matches = quoteModel.searchQuotes(searchStr);
-
-    //         // TODO show different view if no matches found
-    //         res.render("quotes", { quotes: matches });
-    //     }
-    //     // searchQuote: function() {
-    //     //      // Start a read line interface to ask user for parameters
-    //     //      const rl = readline.createInterface({
-    //     //         input: process.stdin,
-    //     //         output: process.stdout
-    //     //     });
-
-    //     //     rl.question(quoteViews.questionSearchString, (searchString) => {
-    //     //         const matches = quoteModel.searchQuotes(searchString);
-
-    //     //         if (matches.length <= 0) {
-    //     //             console.log(quoteViews.noSearchMatches(searchString));
-    //     //             rl.close();
-    //     //             return;
-    //     //         }
-
-    //     //         const view = quoteViews.allQuotes(matches);
-
-    //     //         console.log(quoteViews.matchesFound(searchString));
-    //     //         console.log(view);
-    //     //         rl.close();
-    //     //     })
-
-    //     // }
 }

@@ -22,6 +22,7 @@ app.get('/calendar', eventsController.getAllEvents);
 app.post('/calendar', eventsController.createEvent);
 app.put('/calendar/:id', eventsController.updateEvent);
 app.delete('/calendar/:id', eventsController.removeEvent);
+app.get('/calendarapi', eventsController.getAllEventsApi);
 
 
 

@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: Poppins;
 }
+
 img {
     height: 100%;
     width: 100%;
@@ -19,6 +20,7 @@ header {
     background-color: gray;
     padding-top: 10px;
 }
+
 main {
     position: relative;
     display: flex;
@@ -40,111 +42,115 @@ main {
         margin-bottom: 2rem;
         width: 85%;
         // background-color: gray;
-        
-        .weekday {
+
+        .container {
             display: flex;
-            flex-direction: column;
-            margin-bottom: 1rem;
+            justify-content: center;
+            align-items: center;
 
-            .day-date {
-                display: flex;
-                justify-content: space-between;
-                max-width: 80%;
-
-            }
-
-            .event-section {
-                width: 100%;
-                // background-color: blue;
-                display: flex;
-                flex-direction: row;
-            }
-
-            .event {
-                height: 1.7rem;
+            .date {
                 flex: 1;
-                background-color: rgb(204, 204, 204);
-                max-width: 80%;
-                border-radius: 10px;
-                padding-left: 8px;
-            }
-            
-            .img-div {
-                margin-left: 8px;
-                display: flex;
-                gap: 100%;
-                height: 20px;
-                width: 20px;
+                width: 100%;    
             }
         }
-    }
-    .change-week-container {
-        width: 200px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
 
-        #week-number {
-            padding: 0 10px 0 10px;
-            font-weight: 600;
+        // .day-date {
+        //     display: flex;
+        //     justify-content: space-between;
+        //     max-width: 80%;
+
+        // }
+
+        // .event-section {
+        //     width: 100%;
+        //     // background-color: blue;
+        //     display: flex;
+        //     flex-direction: row;
+        // }
+
+        // .event {
+        //     height: 1.7rem;
+        //     flex: 1;
+        //     background-color: rgb(204, 204, 204);
+        //     max-width: 80%;
+        //     border-radius: 10px;
+        //     padding-left: 8px;
+        // }
+
+        .img-div {
+            margin-left: 8px;
+            display: flex;
+            gap: 100%;
+            height: 20px;
+            width: 20px;
         }
-
-
-        img {
-            width: 30px;
-            height: 30px;
-        }
-
-        #scroll-left {
-            transform: rotate(-90deg);
-        }
-        
-        #scroll-right {
-            transform: rotate(90deg);
-        }
-    }
-
-    .add-event {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 20px;
-        background-color: gray;
-        width: 100px;
-        height: 100px;
-        border-radius: 100%;
-
-        img {
-            width: 40px;
-            height: 40px;
-        }
-    }
-
-    .overview {
-        position: absolute;
-        bottom: 20px;
-        right: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: gray;
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-
-        img {
-            width: 30px;
-            height: 30px;
-        }
-    }
-
-    .event-window {
-        background-color: blue;
     }
 }
+
+.change-week-container {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+
+
+    #week-number {
+        padding: 0 20px 0 20px;
+        font-weight: 600;
+    }
+
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #scroll-left {
+        transform: rotate(-90deg);
+    }
+
+    #scroll-right {
+        transform: rotate(90deg);
+    }
+}
+
+// .add-event {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: absolute;
+//     bottom: 20px;
+//     background-color: gray;
+//     width: 100px;
+//     height: 100px;
+//     border-radius: 100%;
+
+    // img {
+    //     width: 40px;
+    //     height: 40px;
+    // }
+// }
+
+// .overview {
+//     position: absolute;
+//     bottom: 20px;
+//     right: 80px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: gray;
+//     width: 60px;
+//     height: 60px;
+//     border-radius: 100%;
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
 
 footer {
     background-color: rgb(97, 97, 97);
